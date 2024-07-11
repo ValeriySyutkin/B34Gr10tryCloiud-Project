@@ -479,4 +479,10 @@ public class BrowserUtils {
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time)).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
+
+    public static void waitForURLContains(String url) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        //use the 'wait' object with the proper syntax to create explicit wait conditions
+        wait.until(ExpectedConditions.urlContains(url));
+    }
 }

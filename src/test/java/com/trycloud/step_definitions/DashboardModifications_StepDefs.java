@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-public class DashboardPageModifications_StepDefs {
+public class DashboardModifications_StepDefs {
 
         DashboardPage dashboardPage = new DashboardPage();
         LoginTrycloudPage loginTrycloudPage = new LoginTrycloudPage();
@@ -22,12 +22,11 @@ public class DashboardPageModifications_StepDefs {
         public void user_is_already_logged_in_to_trycloud_net_and_is_on_dashboard_page() {
 
             Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
-            //   BrowserUtils.waitForURLContains("login");
+               BrowserUtils.waitForURLContains("login");
             loginTrycloudPage.loginMethod(ConfigurationReader.getProperty("username"),ConfigurationReader.getProperty("password"));
         }
 
         //AC#1  After Login user can see all modules and Username.
-
         @Then("User sees all modules on a dashboard page")
         public void userSeesAllModulesOnADashboardPage() {
             BrowserUtils.waitForURLContains("dashboard");
@@ -36,12 +35,10 @@ public class DashboardPageModifications_StepDefs {
             }
         }
 
-
         @When("User clicks on a profile icon and Dropdown comes up")
         public void user_clicks_on_a_profile_icon_and_dropdown_comes_up() {
             dashboardPage.profileButton.click();
         }
-
 
         @Then("User sees {string} at the top of a drop down")
         public void userSeesAtTheTopOfADropDown(String expectedUsername) {
@@ -63,7 +60,7 @@ public class DashboardPageModifications_StepDefs {
         @Then("User can select any of the Widgets")
         public void user_can_select_any_of_the_widgets() {
             for (WebElement eachWidget : dashboardPage.allWidgets) {
-                BrowserUtils.sleep(1);
+                BrowserUtils.sleep(1); //just for demonstration purpose
                 eachWidget.click();
                 Assert.assertTrue(eachWidget.isEnabled());
             }
@@ -81,7 +78,7 @@ public class DashboardPageModifications_StepDefs {
         @Then("User can select any of the status options")
         public void user_can_select_any_of_the_status_options() {
             for (WebElement eachOption : dashboardPage.allStatusOptions) {
-                BrowserUtils.sleep(1);
+                BrowserUtils.sleep(1); //just for demonstration purpose
                 eachOption.click();
                 Assert.assertTrue(eachOption.isEnabled());
             }

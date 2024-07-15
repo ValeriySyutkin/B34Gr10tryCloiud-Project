@@ -15,7 +15,6 @@ Feature: Upload Edit Delete Functionality
 		Then the file should be listed in the files list	
 
 
-
 	@B34G10-174 @createFolder
 	Scenario: US002 TC02: Verify user can create a new folder
 		When user clicks files module icon
@@ -23,8 +22,7 @@ Feature: Upload Edit Delete Functionality
 		And user selects New folder from the dropdown menu
 		And user enters a name for the new folder
 		And user clicks the create button
-		Then new folder should be listed in the files list	
-
+		Then new folder should be listed in the files list
 
 	@B34G10-175 @deleteItem
 	Scenario: US002 TC03: Verify user can delete any selected item from its three dots menu

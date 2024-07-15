@@ -1,6 +1,7 @@
 package com.trycloud.pages;
 
 import com.trycloud.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,7 +20,7 @@ public class UploadEditDeletePage {
     @FindBy(xpath = "//div[@class='actions creatable']/a[@href='#']")
     public WebElement plusButton;
 
-    @FindBy(xpath = "//div//ul//li//label//span[@class='displayname']")
+    @FindBy(xpath = "//label[@for='file_upload_start']/span[.='Upload file']")
     public WebElement uploadFile;
 
     @FindBy(xpath = "//div[contains(@class, 'newFileMenu')]//ul")
@@ -49,5 +50,10 @@ public class UploadEditDeletePage {
 
     @FindBy (xpath = "//td[@class='filesummary']//span[@class='fileinfo']")
     public WebElement totalNumbersOfFiles;
+
+    public WebElement getLastAddedFolder (String str){
+       String locator = "//span[@class='innernametext'][text()='"+str+"']";
+        return Driver.getDriver().findElement(By.xpath(locator));
+    }
 
 }

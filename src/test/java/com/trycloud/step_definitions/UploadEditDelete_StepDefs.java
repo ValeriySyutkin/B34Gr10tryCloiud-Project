@@ -40,14 +40,14 @@ public class UploadEditDelete_StepDefs {
     @Then("the file should be listed in the files list")
     public void the_file_should_be_listed_in_the_files_list() {
 
-        String expectedFileName = "UploadFileTest.txt";
+        String expectedFileName = "Cydeo.txt";
         String actualFileName = uploadEditDeletePage.uploadFile.getText();
 
         Assert.assertEquals(expectedFileName, actualFileName);
 
         boolean isDisplayed = false;
         for (WebElement eachTextElement : uploadEditDeletePage.fileListElements) {
-            if (eachTextElement.getText().equals("UploadFileTest")) {
+            if (eachTextElement.getText().equals("Cydeo")) {
                 isDisplayed = true;
                 break;
             }
@@ -78,7 +78,6 @@ public class UploadEditDelete_StepDefs {
 
     @Then("new folder should be listed in the files list")
     public void newFolderShouldBeListedInTheFilesList() {
-
 
         String expectedName = "My_new_folder.txt";
         String actualName = uploadEditDeletePage.lastAddedElement.getText();

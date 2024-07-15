@@ -28,13 +28,18 @@ public class UploadEditDelete_StepDefs {
         uploadEditDeletePage.plusButton.click();
     }
 
+
     @When("user selects Upload file")
     public void user_selects_upload_file() {
 
         String systemPath = System.getProperty("user.dir");
+        System.out.println(systemPath);
         String filePath = "/src/test/resources/filesToUpload/Cydeo.txt";
+        System.out.println(filePath);
         String absolPath = systemPath + filePath;
+        System.out.println(absolPath);
         uploadEditDeletePage.uploadFile.sendKeys(absolPath);
+
     }
 
     @Then("the file should be listed in the files list")
@@ -79,20 +84,23 @@ public class UploadEditDelete_StepDefs {
     @Then("new folder should be listed in the files list")
     public void newFolderShouldBeListedInTheFilesList() {
 
-        String expectedName = "My_new_folder.txt";
-        String actualName = uploadEditDeletePage.lastAddedElement.getText();
+        String expectedName = "My_new_folder";
+        String actualName = uploadEditDeletePage.getLastAddedFolder(expectedName).getText();
 
-   //     boolean isFolderFound = false;
-        for (WebElement file : uploadEditDeletePage.fileListElements) {
-            String fileName = file.getText();
-            if (fileName.equals(expectedName)) {
-              //  isFolderFound = true;
-                break;
-            }
-            System.out.println(fileName);
-        }
+        Assert.assertEquals(expectedName, actualName);
 
-        Assert.assertTrue(expectedName, uploadEditDeletePage.fileListElements.contains(actualName));
+
+//        boolean isFolderFound = false;
+//        for (WebElement each : uploadEditDeletePage.fileListElements) {
+//            String fileName = each.getText();
+//            if (fileName.contains(expectedName)) {
+//                isFolderFound = true;
+//                break;
+//            }
+//        }
+
+       // Assert.assertTrue(expectedName, uploadEditDeletePage.fileListElements.contains(actualName));
+     //   Assert.assertTrue(isFolderFound);
     }
 
 

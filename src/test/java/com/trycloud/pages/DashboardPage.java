@@ -19,6 +19,10 @@ public class DashboardPage {
     public List<WebElement> allModules;
 
 
+
+    @FindBy(xpath = "//li[@data-id='settings']/a")
+    public WebElement settingsButton;
+
     @FindBy(xpath = "//div[@class='avatardiv avatardiv-shown']")
     public WebElement profileButton;
 

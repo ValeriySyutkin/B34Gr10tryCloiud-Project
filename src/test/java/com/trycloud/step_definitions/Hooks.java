@@ -26,7 +26,7 @@ public class Hooks {
     /*
     After scenario will be executed automatically after EVERY scenario in the project.
      */
-      @After
+     @After
     public void teardownScenarios(Scenario scenario) {
 
         if(scenario.isFailed()) {

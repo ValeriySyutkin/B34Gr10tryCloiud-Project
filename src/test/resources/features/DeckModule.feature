@@ -10,19 +10,30 @@ Feature: Deck Module Functionality
 	Scenario: US004-TC001 User can create a new board
 			When the user creates a new board
 		    And the new board is successfully created
-				Then the user is navigated to the new board view
+			Then the user is navigated to the new board view
 
 	
 	@B34G10-159
 	Scenario: US004-TC002 User can create a new list of card under any board
-		    When the user creates a new list of cards
-		    Then the new list is added under the current board
+		When the user creates a new board
+		And the new board is successfully created
+		Then the user is navigated to the new board view
+
+		When the user creates a new list of cards
+		Then the new list is added under the current board
 
 	
 	@B34G10-160
 	Scenario: US004-TC003 User can add a new card on any list on the current board
-		    When the user adds a new card to a specific list
-		    Then the user can see the new card in the list
+		When the user creates a new board
+		And the new board is successfully created
+		Then the user is navigated to the new board view
+
+		When the user creates a new list of cards
+		Then the new list is added under the current board
+
+		When the user adds a new card to a specific list
+		Then the user can see the new card in the list
 
 	
 	@B34G10-161

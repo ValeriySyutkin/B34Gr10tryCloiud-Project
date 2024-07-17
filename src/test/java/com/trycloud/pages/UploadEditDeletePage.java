@@ -20,7 +20,10 @@ public class UploadEditDeletePage {
     @FindBy(xpath = "//div[@class='actions creatable']/a[@href='#']")
     public WebElement plusButton;
 
-    @FindBy(xpath = "//label[@for='file_upload_start']/span[.='Upload file']")
+//    @FindBy(xpath = "//label[@for='file_upload_start']/span[.='Upload file']")
+//    public WebElement uploadFile;
+
+    @FindBy(css = "#file_upload_start")
     public WebElement uploadFile;
 
     @FindBy(xpath = "//div[contains(@class, 'newFileMenu')]//ul")

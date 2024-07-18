@@ -485,4 +485,10 @@ public class BrowserUtils {
         //use the 'wait' object with the proper syntax to create explicit wait conditions
         wait.until(ExpectedConditions.urlContains(url));
     }
+
+    //        innerText: This property retrieves the rendered text content visible on the page, excluding hidden elements
+    public static String getTextWhenHidden(WebElement element){
+        String text =element.getAttribute("innerText").trim();
+       return text;
+    }
 }

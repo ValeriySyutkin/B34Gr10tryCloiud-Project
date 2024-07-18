@@ -41,7 +41,7 @@ public class UploadEditDeletePage {
     @FindBy (id = "view13-input-folder")
     public WebElement textBox;
 
-    @FindBy(xpath = "(//input[@type='submit'])[2]")
+    @FindBy(xpath = "//input[@class='icon-confirm']")
     public WebElement createButton;
 
     @FindBy (xpath = "(//a[@class='action action-menu permanent'])[1]")

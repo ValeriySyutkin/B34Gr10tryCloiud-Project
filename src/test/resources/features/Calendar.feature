@@ -25,7 +25,7 @@ Feature: Calendar functionality
     And user clicks Month view in the dropdown menu
     Then user should see monthly calendar view
 
- @B34G10-157 @newEvent @deleteEvent
+ @B34G10-157 @newEvent @calendar
  Scenario: create a new event under the Calendar module
     When user clicks calendar module icon
     When user clicks New event button on the left
@@ -35,7 +35,7 @@ Feature: Calendar functionality
     And  user clicks Save button
     Then user should see new event displayed on monthly view calendar
 
-   @deleteEvent
+  @B34G10-201 @deleteEvent @calendar
    Scenario: user delete a new event
      When user clicks calendar module icon
      And user click on new event

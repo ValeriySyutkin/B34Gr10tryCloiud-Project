@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json","html:target/cucumber-report.html","rerun:target/rerun.txt","me.jvt.cucumber.report.PrettyReports:target/cucumber"},
         features = "src/test/resources/features",
         glue = "com/trycloud/step_definitions",
-        dryRun = true,
-        tags = "@B34G10-162",
+        dryRun = false,
+        tags = "@calendar",
         publish = true //generate report with a public link
 
 )

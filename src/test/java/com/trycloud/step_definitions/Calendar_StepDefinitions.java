@@ -9,12 +9,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 
 public class Calendar_StepDefinitions {
-
 
 
     CalendarPage calendarPage = new CalendarPage();
@@ -143,10 +143,19 @@ public class Calendar_StepDefinitions {
 
     @Then("user should be able to see new event is deleted")
     public void user_should_be_able_to_see_file_is_deleted() {
+        boolean isDeleted;
 
+        try {
+            calendarPage.verifyEvent("New Event");
 
-      // Assert.assertTrue(!calendarPage.verifyEvent("New Event").isDisplayed());
+            isDeleted = false; // Element is still found
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            isDeleted = true; // Element is not found, hence deleted
+        }
 
+        Assert.assertTrue("Event was not successfully deleted", isDeleted);
     }
 
 }
+
+

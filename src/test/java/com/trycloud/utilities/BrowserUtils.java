@@ -493,6 +493,7 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.urlContains(url));
     }
 
+
     //Calendar use; random date generator
     public static String getRandomDate(String dateFormat, int startYear, int endYear) {
         Random random = new Random();
@@ -509,4 +510,12 @@ public class BrowserUtils {
         return sdf.format(randomDate);
     }
 
+
+
+    //        innerText: This property retrieves the rendered text content visible on the page, excluding hidden elements
+    public static String getTextWhenHidden(WebElement element){
+        String text =element.getAttribute("innerText").trim();
+       return text;
+    }
 }
+

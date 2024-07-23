@@ -22,6 +22,15 @@ public class ProfileSettingPage {
     @FindBy(xpath = "//input[@id='displayname']")
     public WebElement usernameInputBox;
 
+    @FindBy(id = "email")
+    public WebElement emailInputBox;
+
+@FindBy (id = "languageinput")
+    public WebElement languageDropdown;
+
+@FindBy (id = "localeexample-time")
+    public WebElement localTime;
+
 
 }
 

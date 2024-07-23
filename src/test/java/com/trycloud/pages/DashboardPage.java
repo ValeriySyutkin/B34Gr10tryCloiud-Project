@@ -40,4 +40,10 @@ public class DashboardPage {
 
     @FindBy (xpath = "//label[@data-v-d5c541dc]")
     public List<WebElement> allStatusOptions;
+
+    @FindBy(xpath = "//ul[@id='appmenu']/li//a[@href='/index.php/apps/calendar/']")
+    public WebElement calendarButton;
+
+    @FindBy (xpath = "(//li[@data-id='activity']/a[@href='/index.php/apps/activity/'])[1]")
+    public WebElement activityButton;
 }

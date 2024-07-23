@@ -14,9 +14,11 @@ public class Login_StepDefinition {
 
     @Given("user is  on the login page of the library application")
     public void userIsOnTheLoginPageOfTheLibraryApplication() {
+
         Driver.getDriver().get(ConfigurationReader.getProperty("env2"));
-        BrowserUtils.waitForClickablility(loginTrycloudPage.loginButton,10);
-        
+        BrowserUtils.waitForVisibility(loginTrycloudPage.loginButton,10);
+        BrowserUtils.waitForURLContains("login");
+
         loginTrycloudPage.loginMethod(ConfigurationReader.getProperty("username"),ConfigurationReader.getProperty("password"));
 
 

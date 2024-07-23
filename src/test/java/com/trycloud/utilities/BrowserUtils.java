@@ -510,7 +510,7 @@ public class BrowserUtils {
         return sdf.format(randomDate);
     }
 
-}
+
 
     //        innerText: This property retrieves the rendered text content visible on the page, excluding hidden elements
     public static String getTextWhenHidden(WebElement element){
